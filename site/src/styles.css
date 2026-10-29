@@ -1,0 +1,249 @@
+:root {
+    --paper: #eeeae3;
+    --ink: #343330;
+    --ink-soft: #68645d;
+    --terminal-text: #eeeae3;
+    --terminal-quiet: rgb(238 234 227 / 0.38);
+    --terminal-flag: #a8a297;
+    --serif: "Young Serif", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+    color-scheme: light;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Cards flung off the stack would otherwise widen the page and flash scrollbars. Unlike
+   hidden, clip doesn't create a scroll container, so the page still scrolls normally. */
+#root {
+    overflow: clip;
+}
+
+a {
+    color: inherit;
+    text-decoration-color: rgb(52 51 48 / 0.3);
+    text-underline-offset: 0.22em;
+    transition: text-decoration-color 0.2s;
+}
+
+a:hover {
+    text-decoration-color: currentColor;
+}
+
+:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.page {
+    display: grid;
+    grid-template-columns: minmax(0, 30rem) minmax(0, 1fr);
+    column-gap: 7rem;
+    align-items: center;
+    max-width: 72rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+}
+
+/* Introduction */
+
+.wordmark {
+    margin: 0 0 2.25rem;
+    font: 400 6rem/0.9 var(--serif);
+    letter-spacing: -0.025em;
+}
+
+.lede {
+    margin: 0 0 1rem;
+    font-size: 1.375rem;
+    line-height: 1.4;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+}
+
+.description {
+    margin: 0;
+    color: var(--ink-soft);
+    text-wrap: pretty;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+}
+
+/* Command */
+
+.terminal {
+    margin: 3rem 0 0;
+    border-radius: 20px;
+    background: var(--ink);
+    color: var(--terminal-text);
+}
+
+.terminal-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1rem 0 1.25rem;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 7px;
+}
+
+.terminal-dots i {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: rgb(238 234 227 / 0.16);
+}
+
+.copy {
+    padding: 0.3rem 0.75rem;
+    border: 0;
+    border-radius: 999px;
+    background: rgb(238 234 227 / 0.08);
+    color: var(--terminal-quiet);
+    font: 500 0.75rem var(--sans);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.copy:hover {
+    background: rgb(238 234 227 / 0.14);
+    color: var(--terminal-text);
+}
+
+.copy:focus-visible {
+    outline-color: var(--terminal-text);
+    border-radius: 999px;
+}
+
+.terminal pre {
+    margin: 0;
+    padding: 1.1rem 1.6rem 1.6rem;
+    overflow-x: auto;
+    font: 14.5px/1.75 var(--mono);
+}
+
+/* Room for the command and all four options, so the page doesn't shift when --two-tone comes and goes. */
+.terminal code {
+    display: block;
+    min-height: calc(5 * 1.75em);
+}
+
+.command-line {
+    display: flex;
+    align-items: center;
+    white-space: pre;
+}
+
+.command-line.option {
+    padding-left: 2ch;
+    overflow: hidden;
+}
+
+.prompt,
+.continuation {
+    color: var(--terminal-quiet);
+}
+
+.continuation {
+    margin-left: auto;
+    padding-left: 2ch;
+}
+
+.flag {
+    color: var(--terminal-flag);
+}
+
+.value-slot {
+    position: relative;
+    display: inline-flex;
+    margin-left: 1ch;
+}
+
+.value {
+    display: inline-flex;
+    align-items: center;
+}
+
+.swatch {
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.55ch;
+    border-radius: 0.22em;
+    box-shadow: 0 0 0 1px rgb(238 234 227 / 0.25) inset;
+}
+
+/* Example icons */
+
+.examples {
+    display: flex;
+    justify-content: center;
+}
+
+.stack-frame {
+    position: relative;
+    flex: none;
+    width: 256px;
+    height: 256px;
+    /* The cascade's back cards fan out 56px up and to the left; this centers the whole group. */
+    translate: 28px 28px;
+}
+
+/* Cut every card to the macOS icon shape, so the shadow and the darkening of the cards
+   behind follow the icon instead of a rounded rectangle. */
+.stack-frame .stack-card {
+    filter: drop-shadow(0 14px 20px rgb(52 51 48 / 0.26)) drop-shadow(0 2px 4px rgb(52 51 48 / 0.14));
+}
+
+.stack-frame .stack-card-face {
+    mask: url("./assets/icon-shape.png") center / 100% 100% no-repeat;
+}
+
+.stack-frame .stack:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 24px;
+    border-radius: 30%;
+}
+
+.stack-frame .stack:focus-visible .stack-card[data-top] .stack-card-face {
+    outline: none;
+}
+
+@media (max-width: 900px) {
+    .page {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 4.5rem;
+        padding: 4.5rem 1.5rem;
+    }
+
+    .examples {
+        order: -1;
+    }
+
+    .wordmark {
+        font-size: 4.5rem;
+        margin-bottom: 1.75rem;
+    }
+}

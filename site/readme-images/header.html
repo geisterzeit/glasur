@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="readme-images.css" />
+    <style>
+      .panel {
+        justify-content: space-between;
+        padding: 0 120px 0 96px;
+      }
+
+      h1 {
+        margin: 0 0 22px;
+        font: 400 128px/0.9 "Young Serif", serif;
+        letter-spacing: -0.025em;
+      }
+
+      p {
+        margin: 0;
+        max-width: 30ch;
+        text-wrap: balance;
+        font-size: 26px;
+        line-height: 1.35;
+        letter-spacing: -0.012em;
+      }
+
+      .cascade {
+        position: relative;
+        width: 210px;
+        height: 210px;
+        translate: 24px 24px;
+      }
+
+      .cascade .icon {
+        position: absolute;
+        inset: 0;
+        width: 210px;
+      }
+
+      .cascade .icon:nth-child(1) { transform: translate(-48px, -48px) scale(0.9); }
+      .cascade .icon:nth-child(2) { transform: translate(-24px, -24px) scale(0.95); }
+    </style>
+  </head>
+  <body>
+    <div class="panel">
+      <div>
+        <h1>glasur</h1>
+        <p>Liquid Glass app icons for your Mac apps, from a single command.</p>
+      </div>
+      <div class="cascade">
+        <img class="icon" src="../public/icons/flask.webp" alt="" />
+        <img class="icon" src="../public/icons/cloud-sun.webp" alt="" />
+        <img class="icon" src="../public/icons/devices.webp" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

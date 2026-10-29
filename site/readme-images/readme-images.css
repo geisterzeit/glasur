@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Young Serif";
+    src: url("../node_modules/@fontsource/young-serif/files/young-serif-latin-400-normal.woff2") format("woff2");
+}
+
+:root {
+    --paper: #eeeae3;
+    --ink: #343330;
+    --ink-soft: #68645d;
+    --terminal-text: #eeeae3;
+    --terminal-quiet: rgb(238 234 227 / 0.38);
+    --terminal-flag: #a8a297;
+    --icon-shadow: drop-shadow(0 18px 26px rgb(52 51 48 / 0.26)) drop-shadow(0 3px 6px rgb(52 51 48 / 0.14));
+}
+
+html,
+body {
+    margin: 0;
+    background: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+.panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 32px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+.icon {
+    display: block;
+    filter: var(--icon-shadow);
+}

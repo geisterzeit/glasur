@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="readme-images.css" />
+    <style>
+      .panel {
+        justify-content: center;
+        gap: 40px;
+      }
+
+      .window {
+        width: 560px;
+        border-radius: 16px;
+        background: var(--ink);
+        color: var(--terminal-text);
+        box-shadow: 0 0 0 1px rgb(0 0 0 / 0.08);
+      }
+
+      .title-bar {
+        display: flex;
+        gap: 8px;
+        padding: 16px 18px 0;
+      }
+
+      .title-bar i {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .title-bar i:nth-child(1) { background: #ff5f57; }
+      .title-bar i:nth-child(2) { background: #febc2e; }
+      .title-bar i:nth-child(3) { background: #28c840; }
+
+      pre {
+        margin: 0;
+        padding: 16px 26px 26px;
+        font: 17px/1.75 ui-monospace, "SF Mono", Menlo, monospace;
+      }
+
+      .line {
+        display: flex;
+        align-items: center;
+        white-space: pre;
+      }
+
+      .option { padding-left: 2ch; }
+      .quiet { color: var(--terminal-quiet); }
+      .flag { color: var(--terminal-flag); }
+      .continuation { margin-left: auto; color: var(--terminal-quiet); }
+
+      .swatch {
+        display: inline-block;
+        width: 0.8em;
+        height: 0.8em;
+        margin: 0 0.55ch 0 1ch;
+        border-radius: 0.22em;
+        background: #3656f7;
+      }
+
+      .arrow {
+        flex: none;
+        width: 212px;
+        height: 112px;
+        color: var(--ink);
+      }
+
+      /* The caption hangs below the icon, so the window, arrow and icon share one center line. */
+      .result {
+        position: relative;
+        margin: 0;
+      }
+
+      .result .icon { width: 230px; }
+
+      .result figcaption {
+        position: absolute;
+        top: calc(100% + 18px);
+        width: 100%;
+        color: var(--ink-soft);
+        font: 16px ui-monospace, "SF Mono", Menlo, monospace;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="panel">
+      <div class="window">
+        <div class="title-bar"><i></i><i></i><i></i></div>
+        <pre><span class="line"><span class="quiet">$ </span>npx glasur generate<span class="continuation"> \</span></span><span class="line option"><span class="flag">--icon</span> clock-countdown<span class="continuation"> \</span></span><span class="line option"><span class="flag">--color</span> <span class="swatch"></span>'#3656F7'<span class="continuation"> \</span></span><span class="line option"><span class="flag">--style</span> paper-tint<span class="continuation"> \</span></span><span class="line option"><span class="flag">--two-tone</span></span></pre>
+      </div>
+      <svg class="arrow" viewBox="0 0 170 90" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 64 C 48 14, 122 16, 160 46" />
+        <path d="M153.3 29.3 L 160 46 L 142.2 43.4" />
+      </svg>
+      <figure class="result">
+        <img class="icon" src="../public/icons/clock-countdown.webp" alt="" />
+        <figcaption>AppIcon.icon</figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+[
+  { "icon": "devices", "color": "#5E5CE6", "style": "default", "twoTone": false },
+  { "icon": "clock-countdown", "color": "#3656F7", "style": "paper-tint", "twoTone": true },
+  { "icon": "cloud-sun", "color": "#FF9500", "style": "night-tint", "twoTone": true },
+  { "icon": "flask", "color": "#20B2A0", "style": "paper", "twoTone": true },
+  { "icon": "compass", "color": "#FF3B30", "style": "night", "twoTone": false },
+  { "icon": "plant", "color": "#34C759", "style": "default", "twoTone": true },
+  { "icon": "music-notes", "color": "#FF2D55", "style": "night-tint", "twoTone": false }
+]
