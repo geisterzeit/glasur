@@ -48,11 +48,23 @@ export class IconDocument {
             }
             writeFileSync(join(staging, "icon.json"), `${JSON.stringify(this.iconJSON, undefined, 2)}\n`);
 
-            if (existsSync(output)) rmSync(output, { recursive: true });
-            renameSync(staging, output);
+            this.replace(output, staging);
         } finally {
             rmSync(staging, { recursive: true, force: true });
         }
+    }
+
+    /** Keeps the previous icon until the new one is in place, and restores it if the swap fails. */
+    private replace(output: string, staging: string): void {
+        const previous = `${staging}-previous`;
+        if (existsSync(output)) renameSync(output, previous);
+        try {
+            renameSync(staging, output);
+        } catch (error) {
+            if (existsSync(previous)) renameSync(previous, output);
+            throw error;
+        }
+        rmSync(previous, { recursive: true, force: true });
     }
 
     private get iconJSON(): unknown {
