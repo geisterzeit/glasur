@@ -72,15 +72,20 @@ npx glasur generate --style paper --two-tone --icon clock-countdown --color '#36
 
 ## Output
 
-Without `--output`, glasur writes `AppIcon.icon`, the App Icon name Xcode gives
-new app targets:
+Run glasur from your project's root folder. It saves the icon as
+`AppIcon.icon`, the name Xcode uses for app icons by default:
 
-- next to the app's `Assets.xcassets`, if the current directory or one of its
-  folders has one, as in Xcode's app template (`MyApp/AppIcon.icon`)
-- otherwise to `Resources/AppIcon.icon`, for a Swift package
+| Your project | Where the icon goes |
+| --- | --- |
+| Xcode project with `MyApp/Assets.xcassets` | `MyApp/AppIcon.icon` |
+| Swift package without an asset catalog | `Resources/AppIcon.icon` |
 
-If there are several asset catalogs, such as an app and a widget extension,
-glasur asks you to choose with `--output`.
+If your project has more than one `Assets.xcassets`, for example for an app and
+a widget, choose the location yourself with `--output`:
+
+```sh
+npx glasur generate --icon devices --color '#5E5CE6' --output MyApp/AppIcon.icon
+```
 
 ## License
 
