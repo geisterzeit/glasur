@@ -1,0 +1,41 @@
+{
+  "name": "glasur",
+  "version": "0.1.0",
+  "description": "Turn a Phosphor icon and a color into a layered Liquid Glass Icon Composer .icon source.",
+  "keywords": [
+    "macos",
+    "icon",
+    "icon-composer",
+    "liquid-glass",
+    "phosphor",
+    "app-icon"
+  ],
+  "homepage": "https://github.com/geisterzeit/glasur#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geisterzeit/glasur.git"
+  },
+  "license": "MIT",
+  "author": "Julian Meser",
+  "type": "module",
+  "bin": {
+    "glasur": "dist/main.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@phosphor-icons/core": "2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^7"
+  }
+}
