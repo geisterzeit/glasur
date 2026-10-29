@@ -7,7 +7,7 @@ Glasur turns a [Phosphor](https://phosphoricons.com) icon and an accent color in
 ![The glasur command for clock-countdown and the icon it generates](docs/example.png)
 
 ```sh
-npx glasur generate --icon clock-countdown --color '#3656F7' --style paper-tint --two-tone
+npx @geisterzeit/glasur generate --icon clock-countdown --color '#3656F7' --style paper-tint --two-tone
 ```
 
 ## Icons
@@ -25,7 +25,7 @@ Pick a style with `--style`. Each one derives its colors from `--color`.
 ![The default style](docs/styles/default.png)
 
 ```sh
-npx glasur generate --icon sneaker-move --color '#5E5CE6'
+npx @geisterzeit/glasur generate --icon sneaker-move --color '#5E5CE6'
 ```
 
 ### `paper`
@@ -33,7 +33,7 @@ npx glasur generate --icon sneaker-move --color '#5E5CE6'
 ![The paper style](docs/styles/paper.png)
 
 ```sh
-npx glasur generate --style paper --icon sneaker-move --color '#5E5CE6'
+npx @geisterzeit/glasur generate --style paper --icon sneaker-move --color '#5E5CE6'
 ```
 
 ### `paper-tint`
@@ -41,7 +41,7 @@ npx glasur generate --style paper --icon sneaker-move --color '#5E5CE6'
 ![The paper-tint style](docs/styles/paper-tint.png)
 
 ```sh
-npx glasur generate --style paper-tint --icon sneaker-move --color '#5E5CE6'
+npx @geisterzeit/glasur generate --style paper-tint --icon sneaker-move --color '#5E5CE6'
 ```
 
 ### `night`
@@ -49,7 +49,7 @@ npx glasur generate --style paper-tint --icon sneaker-move --color '#5E5CE6'
 ![The night style](docs/styles/night.png)
 
 ```sh
-npx glasur generate --style night --icon sneaker-move --color '#5E5CE6'
+npx @geisterzeit/glasur generate --style night --icon sneaker-move --color '#5E5CE6'
 ```
 
 ### `night-tint`
@@ -57,7 +57,7 @@ npx glasur generate --style night --icon sneaker-move --color '#5E5CE6'
 ![The night-tint style](docs/styles/night-tint.png)
 
 ```sh
-npx glasur generate --style night-tint --icon sneaker-move --color '#5E5CE6'
+npx @geisterzeit/glasur generate --style night-tint --icon sneaker-move --color '#5E5CE6'
 ```
 
 ### Two tones
@@ -67,7 +67,7 @@ Add `--two-tone` to any style to use Phosphor's duotone version of the icon.
 ![clock-countdown with --two-tone in the default, paper, paper-tint, night and night-tint styles](docs/styles/two-tone.png)
 
 ```sh
-npx glasur generate --style paper --two-tone --icon clock-countdown --color '#3656F7'
+npx @geisterzeit/glasur generate --style paper --two-tone --icon clock-countdown --color '#3656F7'
 ```
 
 ## Output
@@ -84,7 +84,7 @@ If your project has more than one `Assets.xcassets`, for example for an app and
 a widget, choose the location yourself with `--output`:
 
 ```sh
-npx glasur generate --icon devices --color '#5E5CE6' --output MyApp/AppIcon.icon
+npx @geisterzeit/glasur generate --icon devices --color '#5E5CE6' --output MyApp/AppIcon.icon
 ```
 
 ## License

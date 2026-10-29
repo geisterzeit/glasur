@@ -8,6 +8,8 @@ interface Option {
     swatch?: string;
 }
 
+const command = "npx @geisterzeit/glasur generate";
+
 function options(example: IconExample): Option[] {
     return [
         { flag: "--icon", value: example.icon },
@@ -19,7 +21,7 @@ function options(example: IconExample): Option[] {
 
 function commandText(example: IconExample): string {
     const arguments_ = options(example).map(({ flag, value }) => (value ? `${flag} ${value}` : flag));
-    return ["npx glasur generate", ...arguments_].join(" ");
+    return [command, ...arguments_].join(" ");
 }
 
 const changeTransition = { type: "spring", stiffness: 420, damping: 34 } as const;
@@ -49,7 +51,7 @@ export function CommandBlock({ example, onHoverChange }: CommandBlockProps) {
             <pre>
                 <code>
                     <span className="command-line">
-                        <span className="prompt">$ </span>npx glasur generate
+                        <span className="prompt">$ </span>{command}
                         <Continuation />
                     </span>
                     <AnimatePresence initial={false}>

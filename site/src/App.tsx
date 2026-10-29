@@ -25,7 +25,7 @@ export function App() {
                     <CommandBlock example={shownExample} onHoverChange={setCommandHovered} />
                     <nav className="links" aria-label="Project links">
                         <a href="https://github.com/geisterzeit/glasur">GitHub</a>
-                        <a href="https://www.npmjs.com/package/glasur">npm</a>
+                        <a href="https://www.npmjs.com/package/@geisterzeit/glasur">npm</a>
                         <a href="https://phosphoricons.com">Phosphor Icons</a>
                     </nav>
                 </section>

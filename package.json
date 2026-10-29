@@ -1,5 +1,5 @@
 {
-  "name": "glasur",
+  "name": "@geisterzeit/glasur",
   "version": "0.1.0",
   "description": "Turn a Phosphor icon and a color into a layered Liquid Glass Icon Composer .icon source.",
   "keywords": [

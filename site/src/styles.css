@@ -169,7 +169,6 @@ a:hover {
 
 .continuation {
     margin-left: auto;
-    padding-left: 2ch;
 }
 
 .flag {
@@ -245,5 +244,10 @@ a:hover {
     .wordmark {
         font-size: 4.5rem;
         margin-bottom: 1.75rem;
+    }
+
+    .terminal pre {
+        padding-inline: 1.1rem;
+        font-size: 13px;
     }
 }
